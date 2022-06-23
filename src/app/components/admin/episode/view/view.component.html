@@ -1,0 +1,13 @@
+<div *ngIf="!showContent">
+    <div *ngFor="let episode of episodes">
+        <h1 class="display-4">{{episode.Title}}</h1>
+        <p>{{episode.Brief}}</p>
+        <a href="#" class="nav-toggle" (click)="showContentById(episode.Id)">Read More</a>
+    </div>
+</div>
+
+<div *ngIf="showContent">
+    <div>
+        <p>{{content}}</p>
+    </div>
+</div>

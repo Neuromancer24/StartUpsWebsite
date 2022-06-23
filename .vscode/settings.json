@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/bd37764f-8987-4a1f-8423-dc4ea6cb1e85/microsoft.web/sites/subscriptions/bd37764f-8987-4a1f-8423-dc4ea6cb1e85/resourceGroups/squatsandstartups/providers/Microsoft.Web/sites/SquatsAndStartUpsWeb",
+    "appService.deploySubpath": "src"
+}
