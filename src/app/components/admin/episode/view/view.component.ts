@@ -27,6 +27,6 @@ export class ViewComponent {
   
   showContentById(id: number){
     this.showContent = true;
-    this.content = this.episodes.find(x=>x.Id === id)?.Content;
+    this.content = this.episodes.find(x=>x.id === id)?.content;
   }
 }

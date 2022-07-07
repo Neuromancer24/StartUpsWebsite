@@ -6,10 +6,10 @@ import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 
 export interface Episode {
-    Id: number,
-    Title: string;
-    Brief: string;
-    Content: any;
+    id: number,
+    title: string;
+    brief: string;
+    content: any;
 }
 
 // export interface EpisodeGetModelServerResponse {
@@ -26,6 +26,7 @@ export interface Episode {
 @Injectable()
 export class ConfigService {
   configUrl = 'https://squatsandstartups.azurewebsites.net/api/Episode';
+  //configUrl = 'http://localhost:2486/api/Episode';
 
   constructor(private http: HttpClient) { }
 
