@@ -1,12 +1,31 @@
-<div *ngIf="!showContent" style="padding-left: 50px">
-    <div *ngFor="let episode of episodes">
-        <div [innerHTML]="episode.title"></div>
-        <div [innerHTML]="episode.brief"></div>
-        <a href="#" class="nav-toggle" (click)="showContentById(episode.id)">Read More</a>
+<div class="container" style="padding-top:50px">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-8">
+            <div *ngIf="!showContent" style="padding-left: 50px">
+                <div *ngFor="let episode of episodes">
+                    <div [innerHTML]="episode.title" class="blog-title"></div>
+                    <div [innerHTML]="episode.brief" class="content"></div>
+                    <a href="#" class="nav-toggle" (click)="showContentById(episode.id)">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
     </div>
 </div>
 
-<div *ngIf="showContent" style="padding-left: 25%">
-    <div [innerHTML]="content">
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-1">
+        </div>
+        <div *ngIf="showContent" lass="col-sm-8">
+            <div [innerHTML]="content">
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
     </div>
 </div>

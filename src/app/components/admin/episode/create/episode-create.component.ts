@@ -3,7 +3,6 @@ import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
 import { Episode, ConfigService } from '../../../../config/config.service';
 import { AngularEditorConfig } from "@kolkov/angular-editor";
 
-
 @Component({
   selector: 'episode-create',
   templateUrl: './episode-create.component.html',
