@@ -5,3 +5,7 @@
 .paddingAround {
     padding: 50px;
 }
+
+table {
+    border: 0;
+  }
