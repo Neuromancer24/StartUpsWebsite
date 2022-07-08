@@ -53,6 +53,7 @@ export class EpisodeCreateComponent implements OnInit {
   };
 
   episodeForm:FormGroup;
+  episodes: Episode[] = [];
 
   constructor(private configService: ConfigService, private fb: FormBuilder) {
     this.episodeForm = this.fb.group({      
@@ -60,7 +61,21 @@ export class EpisodeCreateComponent implements OnInit {
       brief: [""],
       content: [""]
     });
+    this.getEpisodes()
   }
+
+  getEpisodes() : void {
+    this.configService.getEpisodes().subscribe(data => {
+      this.episodes = data;
+      this.episodeForm = this.fb.group({      
+        title:[data[0].title],
+        brief: [data[0].brief],
+        content: [data[0].content]
+      });
+      console.log(this.episodes);
+    });    
+ }
+  
 
   ngOnInit(): void {
     this.episodeForm = this.fb.group({
@@ -72,7 +87,7 @@ export class EpisodeCreateComponent implements OnInit {
 
   onSubmit() {
     this.configService.postEpisodes(this.episodeForm.value).subscribe(() => {
-      console.log("Success");
+      console.log(this.episodeForm.value);
     });
   }
 }

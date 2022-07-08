@@ -29,3 +29,16 @@
   table {
     border: 0;
   }
+
+  .padding-top-25{
+    padding-top: 25px;
+  }
+
+  .padding-top-30{
+    padding-top: 30px;
+  }
+
+  .description-table{
+    background-color:#D3D3D3;
+    padding-left: 20px;
+  }
