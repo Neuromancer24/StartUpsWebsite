@@ -8,6 +8,24 @@ import { EpisodeCreateComponent } from './components/admin/episode/create/episod
 import { ViewComponent } from './components/admin/episode/view/view.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
+
+export class CustomReuseStrategy implements RouteReuseStrategy {
+  shouldDetach(route: ActivatedRouteSnapshot): boolean {
+    return false;
+  }
+  store(route: ActivatedRouteSnapshot, handle: DetachedRouteHandle): void {
+  }
+  shouldAttach(route: ActivatedRouteSnapshot): boolean {
+    return false;
+  }
+  retrieve(route: ActivatedRouteSnapshot): DetachedRouteHandle|null {
+    return null;
+  }
+  shouldReuseRoute() {
+    return false;
+  }
+}
 
 @NgModule({
   declarations: [
@@ -24,7 +42,12 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     HttpClientModule,
     AngularEditorModule
   ],
-  providers: [],
+  providers: [    
+    {
+      provide: RouteReuseStrategy,
+      useClass: CustomReuseStrategy,
+    }
+  ],
   bootstrap: [HomeComponent,ViewComponent, MenuComponent]
 })
 export class AppModule { }
