@@ -12,17 +12,6 @@ export interface Episode {
     content: any;
 }
 
-// export interface EpisodeGetModelServerResponse {
-//   count: number;
-//   stores: Episode[];
-//   }
-
-//   export interface EpisodeAdminModelServerResponse {
-//     count: number;
-//     stores: Episode;
-//     }
-
-
 @Injectable()
 export class ConfigService {
   configUrl = 'https://squatsandstartups.azurewebsites.net/api/Episode';
