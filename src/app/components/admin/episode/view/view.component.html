@@ -7,7 +7,7 @@
                 <div *ngFor="let episode of episodes">
                     <div [innerHTML]="episode.title" class="blog-title"></div>
                     <div [innerHTML]="episode.brief" class="content"></div>
-                    <a href="#" class="nav-toggle" (click)="showContentById(episode.id)">Read More</a>
+                    <button class="readmore" (click)="showContentById(episode.id)">Read More</button>
                 </div>
             </div>
         </div>

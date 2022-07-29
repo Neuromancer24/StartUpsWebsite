@@ -12,7 +12,9 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { ConfigService } from './config/config.service';
-import {AppComponent} from './app.component'
+import {AppComponent} from './app.component';
+import { ProductsComponent } from './components/admin/products/products.component';
+import {PersonalAssistantComponent} from './components/productdetails/personalassistant/personalassistant.component';
 
 export class CustomReuseStrategy implements RouteReuseStrategy {
   shouldDetach(route: ActivatedRouteSnapshot): boolean {
@@ -61,7 +63,8 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
     HomeComponent,
     MenuComponent,
     EpisodeCreateComponent,
-    ViewComponent
+    ViewComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,7 @@ export class CustomReuseStrategy implements RouteReuseStrategy {
           useClass: CustomReuseStrategy,
         },
     ConfigService],
-  bootstrap: [AppComponent, HomeComponent, ViewComponent, MenuComponent]
+  bootstrap: [AppComponent, HomeComponent, ViewComponent, MenuComponent, ProductsComponent, PersonalAssistantComponent]
  })
 
  export class AppModule { }

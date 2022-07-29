@@ -11,11 +11,15 @@ import { JoinComponent } from './components/admin/join/join.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AngularEditorModule } from '@kolkov/angular-editor';
 import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
+import { ProductsComponent } from './components/admin/products/products.component';
+import { PersonalAssistantComponent} from './components/productdetails/personalassistant/personalassistant.component';
 
 const routes: Routes = [  
   { path: '', redirectTo:'/home', pathMatch:'full'},
   { path: 'home', component: HomeComponent},
-  { path: 'joinus', component: JoinComponent }];
+  { path: 'joinus', component: JoinComponent },
+  { path: 'products', component: ProductsComponent },
+  { path: 'personalassistant', component: PersonalAssistantComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
