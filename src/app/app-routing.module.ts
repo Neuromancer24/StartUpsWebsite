@@ -15,7 +15,7 @@ import { ProductsComponent } from './components/admin/products/products.componen
 import { PersonalAssistantComponent} from './components/productdetails/personalassistant/personalassistant.component';
 
 const routes: Routes = [  
-  { path: '', redirectTo:'/home', pathMatch:'full'},
+  { path: '', redirectTo:'/products', pathMatch:'full'},
   { path: 'home', component: HomeComponent},
   { path: 'joinus', component: JoinComponent },
   { path: 'products', component: ProductsComponent },
