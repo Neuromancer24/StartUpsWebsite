@@ -78,4 +78,3 @@ jobs:
         app-name: 'SquatsandStartupsweb'
         publish-profile: ${{ secrets.PUBLISHSECRET }}
         package: .
-You have unread notifications
