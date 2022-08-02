@@ -1,29 +1,41 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { BrowserModule } from "@angular/platform-browser";
+import { Routes, RouterModule } from "@angular/router";
 
-import { HomeComponent } from './components/home/home.component';
-import { MenuComponent } from './components/navigation/menu.component';
-import { EpisodeCreateComponent } from './components/admin/episode/create/episode-create.component';
-import { ViewComponent } from './components/admin/episode/view/view.component';
-import { JoinComponent } from './components/admin/join/join.component';
-import { HttpClientModule } from '@angular/common/http';
-import { AngularEditorModule } from '@kolkov/angular-editor';
-import { ActivatedRouteSnapshot, DetachedRouteHandle, RouteReuseStrategy } from '@angular/router';
-import { ProductsComponent } from './components/admin/products/products.component';
-import { PersonalAssistantComponent} from './components/productdetails/personalassistant/personalassistant.component';
+import { AdminLayoutComponent } from "./layouts/admin-layout/admin-layout.component";
+import { AuthLayoutComponent } from './layouts/auth-layout/auth-layout.component';
 
-const routes: Routes = [  
-  { path: '', redirectTo:'/products', pathMatch:'full'},
-  { path: 'home', component: HomeComponent},
-  { path: 'joinus', component: JoinComponent },
-  { path: 'products', component: ProductsComponent },
-  { path: 'personalassistant', component: PersonalAssistantComponent }];
+const routes: Routes = [
+  {
+    path: "",
+    redirectTo: "home",
+    pathMatch: "full"
+  },
+  {
+    path: "",
+    component: AdminLayoutComponent,
+    children: [
+      {
+        path: "",
+        loadChildren: () => import ("./layouts/admin-layout/admin-layout.module").then(m => m.AdminLayoutModule)
+      }
+    ]
+  },
+  {
+    path: "**",
+    redirectTo: "home"
+  }
+];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    CommonModule,
+    BrowserModule,
+    RouterModule.forRoot(routes, {
+      useHash: true
+    })
+  ],
   exports: [RouterModule]
 })
-
-export class AppRoutingModule { }
+export class AppRoutingModule {}
