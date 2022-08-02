@@ -6,29 +6,6 @@ Marketplace
 Explore
  
 @Neuromancer24 
-Neuromancer24
-/
-StartUpsWebsite
-Public
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-13
-Insights
-Settings
-master code for home page .github/workflows/azure-webapps-node.yml #26
-Summary
-Usage
-Workflow file
-Jobs
-build
-deploy
-Workflow file for this run
-.github/workflows/azure-webapps-node.yml at 6467447
 # This workflow will build and push a node.js application to an Azure Web App when a commit is pushed to your default branch.
 #
 # This workflow assumes you have already created the target Azure App Service web app.
